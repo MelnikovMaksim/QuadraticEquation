@@ -41,4 +41,15 @@ internal open class QuadraticEquationKtTest{
         }
         assertEquals(2, solveQuadraticEquation(mockEquation).size )
     }
+    @Test
+    fun RootsOfEquation_3_1 () {
+        val mockEquation: Equation = mock {
+            on { getA() } doReturn(1.0)
+            on { getB() } doReturn(-4.0)
+            on { getC() } doReturn(3.0)
+        }
+        assertTrue(abs(solveQuadraticEquation(mockEquation)[0]) - 3.0 < 1e-5)
+        assertTrue(abs(solveQuadraticEquation(mockEquation)[1]) - 1.0 < 1e-5)
+
+    }
 }
